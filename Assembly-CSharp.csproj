@@ -54,9 +54,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Objects\Tree\TreeSim.cs" />
-     <Compile Include="Assets\Scripts\CameraDrag.cs" />
-     <Compile Include="Assets\Scripts\CameraMovement.cs" />
-     <Compile Include="Assets\Scripts\FlyCamera.cs" />
+     <Compile Include="Assets\Scripts\Camera\CameraDrag.cs" />
+     <Compile Include="Assets\Scripts\Camera\CameraMovement.cs" />
+     <Compile Include="Assets\Scripts\Camera\CameraZoom.cs" />
      <Compile Include="Assets\Scripts\ObjectTile.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/Wong/Documents/GitHub/Sustainable-Universe/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -72,12 +72,6 @@
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
  <HintPath>C:/Users/Wong/Documents/GitHub/Sustainable-Universe/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
- </Reference>
- <Reference Include="Cinemachine">
- <HintPath>C:/Users/Wong/Documents/GitHub/Sustainable-Universe/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
- </Reference>
- <Reference Include="com.unity.cinemachine.editor">
- <HintPath>C:/Users/Wong/Documents/GitHub/Sustainable-Universe/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
