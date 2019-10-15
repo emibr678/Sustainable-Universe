@@ -59,7 +59,6 @@
      <Compile Include="Assets\Scripts\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\FlyCamera.cs" />
      <Compile Include="Assets\Scripts\ObjectTile.cs" />
-     <Compile Include="Assets\Scripts\TileControlls.cs" />
      <Compile Include="Assets\Scripts\TileControls.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/susuni/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

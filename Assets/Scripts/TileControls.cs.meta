@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: b6f794766120d254991c5450423b10c5
+guid: e72c17140a6dec74986a9e3083fab043
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - mark_tile: {fileID: 11400000, guid: d1db3ac9e6e146e43818d7459bdd0032, type: 2}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
