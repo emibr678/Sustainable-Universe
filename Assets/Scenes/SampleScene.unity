@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420030}
   - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
@@ -150,12 +151,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86f99a6a42d120840893c8736738cbc3, type: 3}
+  m_Script: {fileID: 11500000, guid: 32cd4505c9960384db3112b80118edd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  ZoomSpeed: 0.3
   MinSize: 2
-  MaxSize: 5
+  MaxSize: 6
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -224,10 +225,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df14dbe118a6c714e824c02575122c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragSpeed: 2
+  dragSpeed: 30
   cameraDragging: 1
   outerLeft: -10
   outerRight: 10
+  outerUp: 10
+  outerDown: -10
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,6 +325,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19b4ae846c9c1674da934c5ab457f8b4, type: 3}
+  m_Script: {fileID: 11500000, guid: b996b24234bdf494091807faf1860aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+
 --- !u!1 &830665712
 GameObject:
   m_ObjectHideFlags: 0
