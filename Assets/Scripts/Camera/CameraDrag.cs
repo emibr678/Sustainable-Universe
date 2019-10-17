@@ -35,13 +35,13 @@ public class CameraDrag : MonoBehaviour
         if (cameraDragging)
         {
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(1))
             {
                 dragOrigin = Input.mousePosition;
                 return;
             }
 
-            if (!Input.GetMouseButton(0)) return;
+            if (!Input.GetMouseButton(1)) return;
 
             Vector3 pos = Camera.main.ScreenToViewportPoint(dragOrigin - Input.mousePosition);
            
