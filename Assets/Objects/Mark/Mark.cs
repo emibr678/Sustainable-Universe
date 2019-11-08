@@ -25,19 +25,26 @@ public class Mark : MonoBehaviour
         
         grid_position = tile_ui.WorldToCell(transform.parent.position);
     }
-
+    
     void Update()
     {
         Tile tile = (Tile)world.GetTile(grid_position);
         if(tile != null)
         {
-            GameObject marked_object = tile.gameObject;
+            GameObject marked_object = world.GetInstantiatedObject(grid_position);
             
             switch(marked_object.tag)
             {
                 case "Tree":
                 {
                     object_information.GetComponent<Text>().text = "Object: Tree";
+                } break;
+                
+                case "CivBase":
+                {
+                    object_information.GetComponent<Text>().text = "Object: Civilization center\n";
+                    int wood_count = marked_object.GetComponent<CivBaseSim>().wood;
+                    object_information.GetComponent<Text>().text += "Wood: " + wood_count;
                 } break;
                 
                 default:
@@ -54,7 +61,7 @@ public class Mark : MonoBehaviour
         tile = (Tile)ground.GetTile(grid_position);
         if(tile != null)
         {
-            GameObject marked_ground = tile.gameObject;
+            GameObject marked_ground = ground.GetInstantiatedObject(grid_position);
             
             switch(marked_ground.tag)
             {

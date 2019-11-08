@@ -45,8 +45,8 @@ GameObject:
   - component: {fileID: 786490357}
   - component: {fileID: 786490361}
   m_Layer: 0
-  m_Name: Sheep 1
-  m_TagString: Untagged
+  m_Name: Sheep
+  m_TagString: Sheep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
