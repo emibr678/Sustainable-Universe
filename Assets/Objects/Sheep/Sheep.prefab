@@ -17,6 +17,10 @@ GameObject:
   - component: {fileID: 1467981999}
   - component: {fileID: 3277925550840886344}
   - component: {fileID: 1993376194679330400}
+  - component: {fileID: 114360016029184860}
+  - component: {fileID: 114407734266440754}
+  - component: {fileID: 114005886736494562}
+  - component: {fileID: 114973096953818516}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: Sheep
@@ -66,7 +70,7 @@ SortingGroup:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786490356}
-  m_Enabled: 1
+  m_Enabled: 0
   m_SortingLayerID: 2130146985
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -95,7 +99,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786490356}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 909b806341bc1b940afa51368cbeead5, type: 2}
   m_CullingMode: 0
@@ -129,7 +133,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786490356}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -155,7 +159,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786490356}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e926db4736a796948be7ed888928504b, type: 3}
   m_Name: 
@@ -213,3 +217,57 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &114360016029184860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786490356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242846495f44e4c4abc60ff389ec1aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114407734266440754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786490356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7589cb72d3fda6342b7292c9d1dff645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114005886736494562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786490356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1bd321f357d9340a2fef6b1c69963c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114973096953818516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786490356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d61f2364d0c1a147a3defd420995c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollectTags:
+  - DeepGrass
+  speed: 1
+  collect_speed: 2
+  resource_capacity: 50
+  resource_count: 0

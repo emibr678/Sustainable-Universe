@@ -21,6 +21,11 @@ public class MoveToTile : MonoBehaviour
         return !moving;
     }
     
+    public Vector3Int GetTarget()
+    {
+        return target;
+    }
+    
     Tilemap tilemap;
     Tilemap ground_tilemap;
     

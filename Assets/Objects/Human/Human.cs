@@ -12,11 +12,7 @@ public class Human : MonoBehaviour
     MoveToTile mover;
     FindNearest finder;
     
-    public float speed = 1.0f;
-    public int chop_speed = 2;
-    public int wood_capacity = 50;
-    
-    int wood_count = 0;
+    ResourceCollecter collecter;
     
     void Start()
     {
@@ -25,23 +21,7 @@ public class Human : MonoBehaviour
         
         mover = gameObject.GetComponent<MoveToTile>();
         finder = gameObject.GetComponent<FindNearest>();
-    }
-    
-    int ChopTree()
-    {
-        Vector3Int grid_position = tilemap.WorldToCell(transform.position);
-        GameObject tile_object = tilemap.GetInstantiatedObject(grid_position);
-        if(tile_object != null)
-        {
-            TreeSim tree = tile_object.GetComponent<TreeSim>();
-            if(tree != null)
-            {
-                int chopped = tree.TakeHealth(Math.Min(wood_capacity - wood_count, chop_speed));
-                return chopped;
-            }
-        }
-        
-        return 0;
+        collecter = gameObject.GetComponent<ResourceCollecter>();
     }
     
     void DropOffWood()
@@ -53,44 +33,25 @@ public class Human : MonoBehaviour
             CivBaseSim civ_base = tile_object.GetComponent<CivBaseSim>();
             if(civ_base != null)
             {
-                civ_base.wood += wood_count;
-                wood_count = 0;
+                civ_base.wood += collecter.resource_count;
+                collecter.resource_count = 0;
             }
         }
     }
     
     void Update()
     {
-        if(wood_count < wood_capacity)
+        if(collecter.resource_count >= collecter.resource_capacity && mover.MovingDone())
         {
-            if(mover.MovingDone())
+            Vector3Int target = finder.Find("CivBase");
+            Vector3Int grid_position = tilemap.WorldToCell(transform.position);
+            if(target == grid_position)
             {
-                Vector3Int target = finder.Find("Tree");
-                Vector3Int grid_position = tilemap.WorldToCell(transform.position);
-                if(target == grid_position)
-                {
-                    wood_count += ChopTree();
-                }
-                else
-                {
-                    mover.MoveTo(target, speed);
-                }
+                DropOffWood();
             }
-        }
-        else
-        {
-            if(mover.MovingDone())
+            else
             {
-                Vector3Int target = finder.Find("CivBase");
-                Vector3Int grid_position = tilemap.WorldToCell(transform.position);
-                if(target == grid_position)
-                {
-                    DropOffWood();
-                }
-                else
-                {
-                    mover.MoveTo(target, speed);
-                }
+                mover.MoveTo(target, collecter.speed);
             }
         }
     }
