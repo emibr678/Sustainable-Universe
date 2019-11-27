@@ -10,10 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1191943238581226585}
   - component: {fileID: 3136970255486982355}
-  - component: {fileID: 114806804762430754}
   - component: {fileID: 114597803496838840}
-  - component: {fileID: 114775043286487078}
-  - component: {fileID: 114809950628067960}
+  - component: {fileID: 114824025042191492}
   m_Layer: 0
   m_Name: Human
   m_TagString: Human
@@ -72,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ccdc9ff0307bd714a8f3d9601aec460c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62c4942de6851a642924943ff893a880, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -83,18 +81,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &114806804762430754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4991043953486063343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7589cb72d3fda6342b7292c9d1dff645, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114597803496838840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac83442933c741498d12b383782ab7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114775043286487078
+--- !u!114 &114824025042191492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,24 +102,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4991043953486063343}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f1bd321f357d9340a2fef6b1c69963c, type: 3}
+  m_Script: {fileID: 11500000, guid: 29f0eaae84594b84581ef03d2d7448b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114809950628067960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4991043953486063343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d61f2364d0c1a147a3defd420995c64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollectTags:
-  - Tree
+  state: 0
   speed: 1
   collect_speed: 2
-  resource_capacity: 100
+  resource_capacity: 50
   resource_count: 0
