@@ -176,11 +176,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114690782667135024, guid: 19b4ae846c9c1674da934c5ab457f8b4,
-        type: 3}
-      propertyPath: resource_capacity
-      value: 750
-      objectReference: {fileID: 0}
     - target: {fileID: 786490356, guid: 19b4ae846c9c1674da934c5ab457f8b4, type: 3}
       propertyPath: m_Name
       value: Sheep (5)
@@ -228,6 +223,11 @@ PrefabInstance:
     - target: {fileID: 786490360, guid: 19b4ae846c9c1674da934c5ab457f8b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114690782667135024, guid: 19b4ae846c9c1674da934c5ab457f8b4,
+        type: 3}
+      propertyPath: resource_capacity
+      value: 750
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19b4ae846c9c1674da934c5ab457f8b4, type: 3}
@@ -295,15 +295,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114824025042191492, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
-        type: 3}
-      propertyPath: resource_capacity
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 4991043953486063343, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
         type: 3}
       propertyPath: m_Name
       value: Human (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114824025042191492, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
+        type: 3}
+      propertyPath: resource_capacity
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1191943238581226585, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
         type: 3}
@@ -3047,6 +3047,7 @@ GameObject:
   m_Component:
   - component: {fileID: 954046965}
   - component: {fileID: 954046964}
+  - component: {fileID: 954046966}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -3083,6 +3084,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &954046966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954046963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e90262ef0d91b44bb01f6b8d109ab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileMap: {fileID: 830665715}
+  placeableObject:
+  - {fileID: 11400000, guid: 2432cf0fdd16a09428e25ab38dfa987a, type: 2}
+  - {fileID: 11400000, guid: 21d053e0735d3644ab0bf9050232488f, type: 2}
 --- !u!1001 &972772077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3261,15 +3278,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114824025042191492, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
-        type: 3}
-      propertyPath: resource_capacity
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 4991043953486063343, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
         type: 3}
       propertyPath: m_Name
       value: Human (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114824025042191492, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
+        type: 3}
+      propertyPath: resource_capacity
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1191943238581226585, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
         type: 3}
@@ -3340,15 +3357,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114824025042191492, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
-        type: 3}
-      propertyPath: resource_capacity
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 4991043953486063343, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
         type: 3}
       propertyPath: m_Name
       value: Human (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114824025042191492, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
+        type: 3}
+      propertyPath: resource_capacity
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1191943238581226585, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
         type: 3}
