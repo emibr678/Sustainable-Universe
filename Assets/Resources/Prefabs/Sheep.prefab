@@ -18,9 +18,7 @@ GameObject:
   - component: {fileID: 3277925550840886344}
   - component: {fileID: 1993376194679330400}
   - component: {fileID: 114360016029184860}
-  - component: {fileID: 114407734266440754}
-  - component: {fileID: 114005886736494562}
-  - component: {fileID: 114973096953818516}
+  - component: {fileID: 114690782667135024}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: Sheep
@@ -142,7 +140,7 @@ BoxCollider2D:
   m_Offset: {x: -0.027673766, y: 0.060118556}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.54, y: 0.3}
+    pivot: {x: 0.54, y: -0.2}
     oldSize: {x: 0.5, y: 0.5}
     newSize: {x: 0.5, y: 0.5}
     adaptiveTilingThreshold: 0.5
@@ -229,7 +227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 242846495f44e4c4abc60ff389ec1aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114407734266440754
+  resource_loss_rate: 2
+--- !u!114 &114690782667135024
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,36 +237,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 786490356}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7589cb72d3fda6342b7292c9d1dff645, type: 3}
+  m_Script: {fileID: 11500000, guid: 29f0eaae84594b84581ef03d2d7448b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114005886736494562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786490356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f1bd321f357d9340a2fef6b1c69963c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114973096953818516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786490356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d61f2364d0c1a147a3defd420995c64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollectTags:
-  - DeepGrass
-  speed: 1
+  state: 0
+  speed: 0.6
   collect_speed: 2
-  resource_capacity: 50
-  resource_count: 0
+  resource_capacity: 250
+  resource_count: 75
