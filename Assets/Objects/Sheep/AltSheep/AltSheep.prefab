@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 114141220026773110}
   m_Layer: 0
   m_Name: AltSheep
-  m_TagString: Human
+  m_TagString: Sheep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,6 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2f7b9d690038d4b9e387a112f9ebd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetPos: {x: 0, y: 0, z: 0}
+  isMoving: 0
+  maxRange: 0.1
+  waitTime: 0.1
+  randomSpeed: 0.05
   speed: 1
   chop_speed: 2
   wood_capacity: 50
