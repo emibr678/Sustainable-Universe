@@ -43,8 +43,11 @@ public class Mark : MonoBehaviour
                 case "CivBase":
                 {
                     object_information.GetComponent<Text>().text = "Object: Civilization center\n";
-                    int wood_count = marked_object.GetComponent<CivBaseSim>().wood;
-                    object_information.GetComponent<Text>().text += "Wood: " + wood_count;
+                    CivBaseSim cbase = marked_object.GetComponent<CivBaseSim>();
+                    int wood_count = cbase.wood;
+                    int food_count = cbase.food;
+                    object_information.GetComponent<Text>().text += "Wood: " + wood_count + "\n";
+                    object_information.GetComponent<Text>().text += "Food: " + food_count + "\n";
                 } break;
                 
                 default:

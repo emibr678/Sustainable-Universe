@@ -5,93 +5,163 @@ using UnityEngine.Tilemaps;
 
 using System;
 
+public enum HumanJob
+{
+    Lumberjack,
+    Hunter
+}
+
 public class Human : MonoBehaviour
 {
+    public int food_consumption_rate = 1;
+    public HumanJob job = HumanJob.Lumberjack;
+    
     Tilemap tilemap;
     Tilemap ground_tilemap;
-    MoveToTile mover;
-    FindNearest finder;
     
-    public float speed = 1.0f;
-    public int chop_speed = 2;
-    public int wood_capacity = 50;
+    StateMachine machine;
     
-    int wood_count = 0;
+    float consumption_timer = 0;
+    int starvation = 100;
     
     void Start()
     {
         tilemap = GameObject.Find("World").GetComponent<Tilemap>();
         ground_tilemap = GameObject.Find("Ground").GetComponent<Tilemap>();
         
-        mover = gameObject.GetComponent<MoveToTile>();
-        finder = gameObject.GetComponent<FindNearest>();
+        machine = gameObject.GetComponent<StateMachine>();
     }
     
-    int ChopTree()
+    void LumberjackUpdate()
     {
-        Vector3Int grid_position = tilemap.WorldToCell(transform.position);
-        GameObject tile_object = tilemap.GetInstantiatedObject(grid_position);
-        if(tile_object != null)
+        if(machine.state == State.Idle)
         {
-            TreeSim tree = tile_object.GetComponent<TreeSim>();
-            if(tree != null)
+            machine.Collect("Tree");
+        }
+        
+        if(machine.state == State.Full)
+        {
+            bool found = false;
+            Vector3Int civ_base_position = machine.Find("CivBase", ref found);
+            if(found)
             {
-                int chopped = tree.TakeHealth(Math.Min(wood_capacity - wood_count, chop_speed));
-                return chopped;
+                machine.WalkTo(civ_base_position);
             }
         }
         
-        return 0;
+        if(machine.state == State.TargetReached)
+        {
+            bool found = false;
+            Vector3Int civ_base_position = machine.Find("CivBase", ref found);
+            if(found)
+            {
+                Vector3Int grid_position = tilemap.WorldToCell(transform.position);
+                if(civ_base_position == grid_position)
+                {
+                    GameObject tile_object = tilemap.GetInstantiatedObject(grid_position);
+                    if(tile_object != null)
+                    {
+                        CivBaseSim civ_base = tile_object.GetComponent<CivBaseSim>();
+                        if(civ_base != null)
+                        {
+                            civ_base.wood += machine.resource_count;
+                            machine.resource_count = 0;
+                        }
+                    }
+                }
+                
+                machine.Collect("Tree");
+            }
+        }
     }
     
-    void DropOffWood()
+    void HunterUpdate()
     {
-        Vector3Int grid_position = tilemap.WorldToCell(transform.position);
-        GameObject tile_object = tilemap.GetInstantiatedObject(grid_position);
-        if(tile_object != null)
+        if(machine.state == State.Idle)
         {
-            CivBaseSim civ_base = tile_object.GetComponent<CivBaseSim>();
-            if(civ_base != null)
+            machine.Hunt("Sheep");
+        }
+        
+        if(machine.state == State.Full)
+        {
+            bool found = false;
+            Vector3Int civ_base_position = machine.Find("CivBase", ref found);
+            if(found)
             {
-                civ_base.wood += wood_count;
-                wood_count = 0;
+                machine.WalkTo(civ_base_position);
             }
+        }
+        
+        if(machine.state == State.TargetReached)
+        {
+            bool found = false;
+            Vector3Int civ_base_position = machine.Find("CivBase", ref found);
+            if(found)
+            {
+                Vector3Int grid_position = tilemap.WorldToCell(transform.position);
+                if(civ_base_position == grid_position)
+                {
+                    GameObject tile_object = tilemap.GetInstantiatedObject(grid_position);
+                    if(tile_object != null)
+                    {
+                        CivBaseSim civ_base = tile_object.GetComponent<CivBaseSim>();
+                        if(civ_base != null)
+                        {
+                            civ_base.food += machine.resource_count;
+                            machine.resource_count = 0;
+                        }
+                    }
+                }
+                
+                machine.Hunt("Sheep");
+            }
+        }
+    }
+    
+    void HungerUpdate()
+    {
+        consumption_timer += Time.deltaTime;
+        if(consumption_timer >= 0.1f)
+        {
+            bool found = false;
+            Vector3Int civ_base_position = machine.Find("CivBase", ref found);
+            if(found)
+            {
+                GameObject tile_object = tilemap.GetInstantiatedObject(civ_base_position);
+                if(tile_object != null)
+                {
+                    CivBaseSim civ_base = tile_object.GetComponent<CivBaseSim>();
+                    if(civ_base != null)
+                    {
+                        if(civ_base.food > food_consumption_rate)
+                        {
+                            civ_base.food -= food_consumption_rate;
+                            starvation = 100;
+                        }
+                        else
+                        {
+                            starvation--;
+                        }
+                    }
+                }
+            }
+            
+            consumption_timer = 0;
+        }
+        
+        if(starvation <= 0)
+        {
+            Destroy(gameObject);
         }
     }
     
     void Update()
     {
-        if(wood_count < wood_capacity)
+        switch(job)
         {
-            if(mover.MovingDone())
-            {
-                Vector3Int target = finder.Find("Tree");
-                Vector3Int grid_position = tilemap.WorldToCell(transform.position);
-                if(target == grid_position)
-                {
-                    wood_count += ChopTree();
-                }
-                else
-                {
-                    mover.MoveTo(target, speed);
-                }
-            }
+            case HumanJob.Lumberjack: LumberjackUpdate(); break;
+            case HumanJob.Hunter:     HunterUpdate(); break;
         }
-        else
-        {
-            if(mover.MovingDone())
-            {
-                Vector3Int target = finder.Find("CivBase");
-                Vector3Int grid_position = tilemap.WorldToCell(transform.position);
-                if(target == grid_position)
-                {
-                    DropOffWood();
-                }
-                else
-                {
-                    mover.MoveTo(target, speed);
-                }
-            }
-        }
+        HungerUpdate();
     }
 }

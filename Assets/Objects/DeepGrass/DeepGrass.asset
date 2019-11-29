@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c71e3105f4caeae4fb25bb734d7796b0, type: 3}
-  m_Name: Rock
+  m_Name: DeepGrass
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 3b141eea255f7e949b85578be6a592c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad93deb988d8e8b449cc682ccbe49460, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -31,7 +31,7 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 1
-  m_InstancedGameObject: {fileID: 3630291259972764506, guid: 43016ad089278ca499f3045a0fa345b0,
+  m_InstancedGameObject: {fileID: 184598685719724239, guid: d104da25c6ca8364aa80205a8448ab56,
     type: 3}
   m_Flags: 1
   m_ColliderType: 1
