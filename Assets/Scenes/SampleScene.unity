@@ -300,11 +300,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Human (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 114824025042191492, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
-        type: 3}
-      propertyPath: resource_capacity
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 1191943238581226585, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -364,6 +359,11 @@ PrefabInstance:
         type: 3}
       propertyPath: job
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114824025042191492, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
+        type: 3}
+      propertyPath: resource_capacity
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 608d9e1800ab58c4fbd5a89c8c42c902, type: 3}
@@ -3098,8 +3098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileMap: {fileID: 830665715}
   placeableObject:
-  - {fileID: 11400000, guid: 2432cf0fdd16a09428e25ab38dfa987a, type: 2}
-  - {fileID: 11400000, guid: 21d053e0735d3644ab0bf9050232488f, type: 2}
+  - {fileID: 11400000, guid: 5fc4d721fc86922459b986ad5f107c50, type: 2}
 --- !u!1001 &972772077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3283,11 +3282,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Human (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 114824025042191492, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
-        type: 3}
-      propertyPath: resource_capacity
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 1191943238581226585, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3348,6 +3342,11 @@ PrefabInstance:
       propertyPath: job
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114824025042191492, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
+        type: 3}
+      propertyPath: resource_capacity
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 608d9e1800ab58c4fbd5a89c8c42c902, type: 3}
 --- !u!1001 &1440908164
@@ -3361,11 +3360,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Human (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114824025042191492, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
-        type: 3}
-      propertyPath: resource_capacity
-      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1191943238581226585, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
         type: 3}
@@ -3426,6 +3420,11 @@ PrefabInstance:
         type: 3}
       propertyPath: job
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114824025042191492, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
+        type: 3}
+      propertyPath: resource_capacity
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 608d9e1800ab58c4fbd5a89c8c42c902, type: 3}

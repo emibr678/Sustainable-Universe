@@ -67,10 +67,29 @@ public class PlaceObjects : MonoBehaviour
 		if(Input.GetMouseButtonDown(0))
         {
 			if(!tileMap.HasTile(currentCell))
-				tileMap.SetTile(currentCell, currentPlaceableObject);
+				Check_SetTile(currentCell,currentPlaceableObject);
 		}
 
     }
+	
+	private void Check_SetTile(Vector3Int cell, Tile thisObject)
+	{
+		Buildings script_House = thisObject.gameObject.GetComponent<House>();
+		if(script_House != null)
+		{
+			bool enough_resources = script_House.Check_canBuild();
+			if(enough_resources)
+			{	
+				tileMap.SetTile(cell, thisObject);
+			}
+			else
+				Debug.Log("Not enough resources for " + thisObject.name);			
+		}
+		else
+			Debug.Log("Something went wrong"); //kommer hit för att scriptet "House" inte finns i objektet
+		
+	}
+	
 
     private void ReleaseIfClicked()
     {
