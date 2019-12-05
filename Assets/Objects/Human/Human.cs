@@ -7,6 +7,7 @@ using System;
 
 public enum HumanJob
 {
+    Idle,
     Lumberjack,
     Hunter
 }
@@ -14,7 +15,7 @@ public enum HumanJob
 public class Human : MonoBehaviour
 {
     public int food_consumption_rate = 1;
-    public HumanJob job = HumanJob.Lumberjack;
+    public HumanJob job = HumanJob.Idle;
     
     Tilemap tilemap;
     Tilemap ground_tilemap;
@@ -30,6 +31,11 @@ public class Human : MonoBehaviour
         ground_tilemap = GameObject.Find("Ground").GetComponent<Tilemap>();
         
         machine = gameObject.GetComponent<StateMachine>();
+    }
+    
+    void IdleUpdate()
+    {
+        machine.Idle();
     }
     
     void LumberjackUpdate()
@@ -121,7 +127,7 @@ public class Human : MonoBehaviour
     void HungerUpdate()
     {
         consumption_timer += Time.deltaTime;
-        if(consumption_timer >= 0.1f)
+        if(consumption_timer >= 0.5f)
         {
             bool found = false;
             Vector3Int civ_base_position = machine.Find("CivBase", ref found);
@@ -159,6 +165,7 @@ public class Human : MonoBehaviour
     {
         switch(job)
         {
+            case HumanJob.Idle:       IdleUpdate(); break;
             case HumanJob.Lumberjack: LumberjackUpdate(); break;
             case HumanJob.Hunter:     HunterUpdate(); break;
         }

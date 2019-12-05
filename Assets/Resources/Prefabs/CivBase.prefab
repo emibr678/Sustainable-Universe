@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wood: 0
-  food: 800
+  stone: 0
+  food: 1000

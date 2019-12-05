@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 1993376194679330400}
   - component: {fileID: 114360016029184860}
   - component: {fileID: 114690782667135024}
+  - component: {fileID: 114722749904241922}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: Sheep
@@ -243,5 +244,19 @@ MonoBehaviour:
   state: 0
   speed: 0.6
   collect_speed: 2
-  resource_capacity: 250
-  resource_count: 75
+  resource_capacity: 380
+  resource_count: 50
+--- !u!114 &114722749904241922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786490356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66751bece30ff0c46a0a7e8fcf9da9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  default_left: 1
+  threshold: 0.00001

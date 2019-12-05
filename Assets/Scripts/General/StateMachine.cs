@@ -46,6 +46,11 @@ public class StateMachine : MonoBehaviour
         ground_tilemap = GameObject.Find("Ground").GetComponent<Tilemap>();
     }
     
+    public void Idle()
+    {
+        state = State.Idle;
+    }
+    
     public void Collect(string tag)
     {
         state = State.CollectSearch;

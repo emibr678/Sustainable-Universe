@@ -50,9 +50,19 @@ public class Mark : MonoBehaviour
                     object_information.GetComponent<Text>().text += "Food: " + food_count + "\n";
                 } break;
                 
+                case "Rock":
+                {
+                    object_information.GetComponent<Text>().text = "Object: Rock";
+                } break;
+                
+                case "DeepGrass":
+                {
+                    object_information.GetComponent<Text>().text = "Object: Thick grass";
+                } break;
+                
                 default:
                 {
-                    object_information.GetComponent<Text>().text = "Uknown object type";
+                    object_information.GetComponent<Text>().text = marked_object.tag;
                 } break;
             }
         }
