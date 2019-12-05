@@ -3097,7 +3097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileMap: {fileID: 830665715}
-  placeableObject:
+  placeableTile:
   - {fileID: 11400000, guid: 5fc4d721fc86922459b986ad5f107c50, type: 2}
 --- !u!1001 &972772077
 PrefabInstance:

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class Buildings : MonoBehaviour
+public class Building : MonoBehaviour
 {
     Tilemap tilemap;
     Tilemap ground_tilemap;
@@ -26,31 +26,17 @@ public class Buildings : MonoBehaviour
     }
 	
 	public virtual bool Check_canBuild()
-	{			
-		try {
-            GameObject civ = GameObject.Find("CivBase");             
-			if(civ != null)
+	{	
+		CivBaseSim civ_base = GameObject.FindWithTag("CivBase").GetComponent<CivBaseSim>();
+		if(civ_base != null)
+		{
+			if(civ_base.wood >= cost_wood && civ_base.stone > cost_stone)
 			{
-				//hur får man en ref till CivBase för att kunna läsa/skriva resurser
-						CivBaseSim civ_base = civ.GetComponent<CivBaseSim>();
-						if(civ_base != null)
-						{
-							if(civ_base.wood >= cost_wood /*&& civ_base.stone > cost_stone*/)
-							{
-								civ_base.wood -= cost_wood;
-								//civ_base.stone -= cost_stone;
-								return true;
-							}
-						}
-					
-				
+				civ_base.wood -= cost_wood;
+				civ_base.stone -= cost_stone;
+				return true;
 			}
-			return false;
-			
-		}       
-        catch (NullReferenceException ex) {
-            Debug.Log(ex);
-        }
+		}
 		return false;
 		
 	}

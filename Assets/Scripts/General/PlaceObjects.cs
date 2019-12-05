@@ -7,42 +7,42 @@ public class PlaceObjects : MonoBehaviour
 	public Tilemap tileMap;
 	
     [SerializeField]
-    public Tile[] placeableObject;
+    public Tile[] placeableTile;
 
-    private Tile currentPlaceableObject;
+    private Tile currentPlaceableTile;
 
     private int currentIndex = -1;
 
     private void Update()
     {
-        HandleNewObjectHotkey();
+        HandleHotkey();
 
-        if (currentPlaceableObject != null)
+        if (currentPlaceableTile != null) // if a new key has been pressed 
         {
             MoveCurrentObjectToMouse();
             ReleaseIfClicked();
         }
     }
 
-    private void HandleNewObjectHotkey()
+    private void HandleHotkey()
     {
-        for (int i = 0; i < placeableObject.Length; i++)
+        for (int i = 0; i < placeableTile.Length; i++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha0 + 1 + i))
             {
-                if (PressedKeyOfCurrent(i))
+                if (PressedKeyIsCurrent(i)) // press the same key to undo, else a new key is pressed
                 {
-                    Destroy(currentPlaceableObject);
+                    Destroy(currentPlaceableTile);
                     currentIndex = -1;
                 } 
                 else
                 {
-                    if (currentPlaceableObject != null)
+                    if (currentPlaceableTile != null)
                     {
-                        Destroy(currentPlaceableObject);
+                        Destroy(currentPlaceableTile);
                     }
 
-                    currentPlaceableObject = Instantiate(placeableObject[i]);
+                    currentPlaceableTile = Instantiate(placeableTile[i]);
                     currentIndex = i;
                 }
 
@@ -51,51 +51,56 @@ public class PlaceObjects : MonoBehaviour
         }
     }
 
-    private bool PressedKeyOfCurrent(int i)
+    private bool PressedKeyIsCurrent(int i)
     {
-        return currentPlaceableObject != null && currentIndex == i;
+        return currentPlaceableTile != null && currentIndex == i;
     }
 
+	// lets user place tile on mouse position, if tile is empty
     private void MoveCurrentObjectToMouse()
     {
-		Sprite sprite = currentPlaceableObject.sprite;
 		Vector3 mousepos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousepos.z = 0;		
-		Vector3Int currentCell = tileMap.WorldToCell(mousepos);
-		
-		
+		Vector3Int currentCell = tileMap.WorldToCell(mousepos);		
+
+		// TODO: Hur ska man göra för att rita ut det man vill placera, så att man kan se vad det är.
+		//Tile test = Instantiate(currentPlaceableTile, currentCell, Quaternion.identity);	
+		//tileMap.SetTile(currentCell, test);	
+
 		if(Input.GetMouseButtonDown(0))
         {
 			if(!tileMap.HasTile(currentCell))
-				Check_SetTile(currentCell,currentPlaceableObject);
+				Check_SetTile(currentCell,currentPlaceableTile);
 		}
+		//Destroy(test); 
 
     }
 	
-	private void Check_SetTile(Vector3Int cell, Tile thisObject)
+	// checks if there is enough resources in civbase from Building.Check_canBuild()
+	private void Check_SetTile(Vector3Int cell, Tile thisTile)
 	{
-		Buildings script_House = thisObject.gameObject.GetComponent<House>();
-		if(script_House != null)
+		Building script_Building = thisTile.gameObject.GetComponent<Building>();
+		if(script_Building != null)
 		{
-			bool enough_resources = script_House.Check_canBuild();
+			bool enough_resources = script_Building.Check_canBuild();
 			if(enough_resources)
 			{	
-				tileMap.SetTile(cell, thisObject);
+				tileMap.SetTile(cell, thisTile);
 			}
 			else
-				Debug.Log("Not enough resources for " + thisObject.name);			
+				Debug.Log("Not enough resources for " + thisTile.name);			
 		}
 		else
-			Debug.Log("Something went wrong"); //kommer hit för att scriptet "House" inte finns i objektet
+			Debug.Log("Something went wrong"); //kommer hit för att scriptet "Building" inte finns i objektet //script som ärver från building fungerar
 		
 	}
 	
-
+	// set currentPlaceableTile = null when mouse released
     private void ReleaseIfClicked()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            currentPlaceableObject = null;
+            currentPlaceableTile = null;
         }
     }
 }

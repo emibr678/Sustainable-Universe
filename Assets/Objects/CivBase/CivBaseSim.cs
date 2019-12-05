@@ -9,6 +9,7 @@ public class CivBaseSim : MonoBehaviour
     Tilemap ground_tilemap;
     
     public int wood = 0;
+	public int stone = 0;
     public int food = 100;
     
     void Start()
