@@ -11,7 +11,9 @@ public class Fish : MonoBehaviour
     
     Tilemap tilemap;
     Tilemap ground_tilemap;
-    
+    GameObject smallFish;
+    Collider smallFishCollider;
+    Collider myCollider;
     StateMachine machine;
     
     float loss_timer = 0;
@@ -22,6 +24,9 @@ public class Fish : MonoBehaviour
         ground_tilemap = GameObject.Find("Ground").GetComponent<Tilemap>();
         
         machine = gameObject.GetComponent<StateMachine>();
+        smallFish = GameObject.Find("SmallFish");
+        smallFishCollider = smallFish.GetComponent<Collider>();
+        myCollider = gameObject.GetComponent<Collider>();
         machine.state = State.Idle;
     }
     
@@ -55,4 +60,12 @@ public class Fish : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void OnCollisionEnter(Collision collision)
+  {
+      if (collision.gameObject.tag == "SmallFish")
+      {
+          Physics.IgnoreCollision(smallFishCollider, myCollider);
+      }
+  }
 }

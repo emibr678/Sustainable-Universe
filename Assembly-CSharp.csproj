@@ -75,6 +75,7 @@
      <Compile Include="Assets\Scripts\General\Resource.cs" />
      <Compile Include="Assets\Scripts\General\StateMachine.cs" />
      <Compile Include="Assets\Scripts\Movement\Flipper.cs" />
+     <Compile Include="Assets\Scripts\Movement\Patrol_Alternative.cs" />
      <Compile Include="Assets\Scripts\Movement\RandomMovement.cs" />
      <Compile Include="Assets\Scripts\Movement\RandomRenderer.cs" />
      <Compile Include="Assets\Scripts\Tiles\ObjectTile.cs" />

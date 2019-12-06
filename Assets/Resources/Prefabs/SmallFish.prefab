@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 114474303178625934}
   - component: {fileID: 114472662020847602}
   - component: {fileID: 50023421365367382}
+  - component: {fileID: 114581420619862802}
   - component: {fileID: 4588485169419117233}
   - component: {fileID: 61055485866454722}
   m_Layer: 0
@@ -144,12 +145,34 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &114581420619862802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121097456282641339}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e83cd6321caac4849a1aa613a97b9830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {x: 1, y: 2}
+  rotationAngle: 2
+  normalSpeed: 1
+  alarmSpeed: 1
+  restTime: 1
+  initialrestTime: 1
+  moveTime: 10
+  initialmoveTime: 1
+  lookTime: 1
+  initiallookTime: 1
 --- !u!114 &4588485169419117233
 MonoBehaviour:
   m_ObjectHideFlags: 0

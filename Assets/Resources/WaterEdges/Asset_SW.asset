@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c71e3105f4caeae4fb25bb734d7796b0, type: 3}
-  m_Name: WaterWall
+  m_Name: Asset_SW
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 9d869f59b5a34e74bb1d33bff28c5ac9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5d5bc5d115d3fb044a6b68dd72aca5ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -31,7 +31,7 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 1
-  m_InstancedGameObject: {fileID: 6152220998382060745, guid: 0dbcf3137a28e93459c62695d95e0b38,
+  m_InstancedGameObject: {fileID: 4831455433576364518, guid: e2c302eb14ed6b9439441ad089c295bf,
     type: 3}
   m_Flags: 1
   m_ColliderType: 1
