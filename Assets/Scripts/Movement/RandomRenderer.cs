@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class IsometricCharacterRenderer : MonoBehaviour
+public class RandomRenderer : MonoBehaviour
 {
 
     public static readonly string[] staticDirections = { "Static N", "Static NW", "Static W", "Static SW", "Static S", "Static SE", "Static E", "Static NE" };

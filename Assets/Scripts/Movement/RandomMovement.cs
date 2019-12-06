@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IsometricPlayerMovementController : MonoBehaviour
+public class RandomMovement : MonoBehaviour
 {
 
     public float moveSpeed;
@@ -35,44 +35,19 @@ public class IsometricPlayerMovementController : MonoBehaviour
             switch(WalkDirection) {
                 case 0:
                     rb.velocity = new Vector2(0, 2);
-                    //anim.SetBool("NW", true);
-                    //Debug.Log("0");
                     break;
                 
                 case 1:
                     rb.velocity = new Vector2(1, 0);
-                  //   anim.SetBool("NE", true);
-                   // Debug.Log("1");
                     break;
                
                 case 2:
                     rb.velocity = new Vector2(0, -2);
-                 //    anim.SetBool("SW", true);
-                   // Debug.Log("2");
                     break;
                 
                 case 3:
                     rb.velocity = new Vector2(-1, 0);
-                //     anim.SetBool("SE", true);
-                  //  Debug.Log("3");
                     break;
-
-                /*case 4:
-                    rb.velocity = new Vector2(0, 1);
-                   // Debug.Log("4");
-                    break;
-                case 5:
-                    rb.velocity = new Vector2(0, -1);
-                   // Debug.Log("5");
-                    break;
-                case 6:
-                    rb.velocity = new Vector2(1, -1);
-                  //  Debug.Log("6");
-                    break;
-                case 7:
-                    rb.velocity = new Vector2(1, 1);
-                   // Debug.Log("7");
-                    break; */
             }
 
             if(walkCounter < 0) {
@@ -92,7 +67,7 @@ public class IsometricPlayerMovementController : MonoBehaviour
     }
 
     public void ChooseDirection() {
-        WalkDirection =  Random.Range(0, 8);
+        WalkDirection =  Random.Range(0, 3);
        // Debug.Log(WalkDirection);
         isWalking = true;
         walkCounter = walkTime;

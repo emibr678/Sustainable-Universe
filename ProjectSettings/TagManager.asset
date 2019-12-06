@@ -10,6 +10,9 @@ TagManager:
   - Human
   - Sheep
   - CivBase
+  - DeepGrass
+  - Fish
+  - SmallFish
   layers:
   - Default
   - TransparentFX
