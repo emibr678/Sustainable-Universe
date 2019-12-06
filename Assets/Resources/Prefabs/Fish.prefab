@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 915174723399134806}
   - component: {fileID: 114053932148609844}
   - component: {fileID: 114121727987375400}
+  - component: {fileID: 114902043657225312}
   - component: {fileID: 114341479099691034}
   - component: {fileID: 61300468358866422}
   - component: {fileID: 50878404332667076}
@@ -115,7 +116,7 @@ MonoBehaviour:
   collect_speed: 10
   resource_capacity: 380
   resource_count: 50
---- !u!114 &114341479099691034
+--- !u!114 &114902043657225312
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,6 +124,20 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7258155257787603709}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00f25e4eb31ebfa47b2eecdb5652b7bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food_consumption_rate: 340
+  target: SmallFish
+--- !u!114 &114341479099691034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7258155257787603709}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7188c59695118e04c803eec3a7333eb5, type: 3}
   m_Name: 

@@ -34,6 +34,7 @@ public class StateMachine : MonoBehaviour
     string hunt_tag    = "";
     Vector3Int walk_to;
     GameObject hunt_target = null;
+    public static int fishCount = 5;
     
     float collect_timer = 0;
     
