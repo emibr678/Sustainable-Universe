@@ -25,13 +25,13 @@ public class Mark : MonoBehaviour
         
         grid_position = tile_ui.WorldToCell(transform.parent.position);
     }
-
+    
     void Update()
     {
         Tile tile = (Tile)world.GetTile(grid_position);
         if(tile != null)
         {
-            GameObject marked_object = tile.gameObject;
+            GameObject marked_object = world.GetInstantiatedObject(grid_position);
             
             switch(marked_object.tag)
             {
@@ -40,9 +40,29 @@ public class Mark : MonoBehaviour
                     object_information.GetComponent<Text>().text = "Object: Tree";
                 } break;
                 
+                case "CivBase":
+                {
+                    object_information.GetComponent<Text>().text = "Object: Civilization center\n";
+                    CivBaseSim cbase = marked_object.GetComponent<CivBaseSim>();
+                    int wood_count = cbase.wood;
+                    int food_count = cbase.food;
+                    object_information.GetComponent<Text>().text += "Wood: " + wood_count + "\n";
+                    object_information.GetComponent<Text>().text += "Food: " + food_count + "\n";
+                } break;
+                
+                case "Rock":
+                {
+                    object_information.GetComponent<Text>().text = "Object: Rock";
+                } break;
+                
+                case "DeepGrass":
+                {
+                    object_information.GetComponent<Text>().text = "Object: Thick grass";
+                } break;
+                
                 default:
                 {
-                    object_information.GetComponent<Text>().text = "Uknown object type";
+                    object_information.GetComponent<Text>().text = marked_object.tag;
                 } break;
             }
         }
@@ -54,7 +74,7 @@ public class Mark : MonoBehaviour
         tile = (Tile)ground.GetTile(grid_position);
         if(tile != null)
         {
-            GameObject marked_ground = tile.gameObject;
+            GameObject marked_ground = ground.GetInstantiatedObject(grid_position);
             
             switch(marked_ground.tag)
             {
