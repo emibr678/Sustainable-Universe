@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resource_loss_rate: 1
   timer: 0
-  reproduce_time: 2
+  reproduce_time: 3.2
   fishCount: 5
 --- !u!114 &114325872681700290
 MonoBehaviour:
