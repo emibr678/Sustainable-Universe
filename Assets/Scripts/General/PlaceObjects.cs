@@ -103,4 +103,10 @@ public class PlaceObjects : MonoBehaviour
             currentPlaceableTile = null;
         }
     }
+
+    public void Pressed()
+    { //instansiate with element 0
+    //use old functions
+        Debug.Log("Hello world");
+    }
 }
