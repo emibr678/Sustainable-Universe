@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2195452233607333098}
   - component: {fileID: 5906398928054587638}
-  - component: {fileID: 114591874798390548}
-  - component: {fileID: 114474303178625934}
   - component: {fileID: 114472662020847602}
-  - component: {fileID: 50023421365367382}
-  - component: {fileID: 114581420619862802}
   - component: {fileID: 4588485169419117233}
+  - component: {fileID: 50023421365367382}
+  - component: {fileID: 114087949506611000}
+  - component: {fileID: 114325872681700290}
   - component: {fileID: 61055485866454722}
   m_Layer: 0
   m_Name: SmallFish
@@ -86,33 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &114591874798390548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1121097456282641339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b3dc0d83e5f4554c87495d69acebf05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  acceptable_ground: []
-  spread_probability: 3
---- !u!114 &114474303178625934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1121097456282641339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 257834131456a634f80871ea8b845bcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
 --- !u!114 &114472662020847602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +102,18 @@ MonoBehaviour:
   walkTime: 0.2
   waitTime: 1
   anim: {fileID: 0}
+--- !u!114 &4588485169419117233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121097456282641339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a28ba50445381f442bdab61b9a2a6b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &50023421365367382
 Rigidbody2D:
   serializedVersion: 4
@@ -151,29 +135,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &114581420619862802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1121097456282641339}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e83cd6321caac4849a1aa613a97b9830, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movement: {x: 1, y: 2}
-  rotationAngle: 2
-  normalSpeed: 1
-  alarmSpeed: 1
-  restTime: 1
-  initialrestTime: 1
-  moveTime: 10
-  initialmoveTime: 1
-  lookTime: 1
-  initiallookTime: 1
---- !u!114 &4588485169419117233
+--- !u!114 &114087949506611000
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,9 +144,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 1121097456282641339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a28ba50445381f442bdab61b9a2a6b6e, type: 3}
+  m_Script: {fileID: 11500000, guid: c7a5d6ad699824f44b0ce0580e32b072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resource_loss_rate: 1
+  timer: 0
+  reproduce_time: 2.8
+  fishCount: 5
+--- !u!114 &114325872681700290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121097456282641339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f0eaae84594b84581ef03d2d7448b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  speed: 1
+  collect_speed: 2
+  resource_capacity: 100
+  resource_count: 100
 --- !u!61 &61055485866454722
 BoxCollider2D:
   m_ObjectHideFlags: 0
