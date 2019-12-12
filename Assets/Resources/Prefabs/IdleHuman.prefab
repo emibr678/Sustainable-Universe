@@ -12,6 +12,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: IdleHuman
       objectReference: {fileID: 0}
+    - target: {fileID: 114597803496838840, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
+        type: 3}
+      propertyPath: job
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114597803496838840, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
+        type: 3}
+      propertyPath: food_consumption_rate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1191943238581226585, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,16 +76,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114597803496838840, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
-        type: 3}
-      propertyPath: job
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114597803496838840, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
-        type: 3}
-      propertyPath: food_consumption_rate
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 608d9e1800ab58c4fbd5a89c8c42c902, type: 3}

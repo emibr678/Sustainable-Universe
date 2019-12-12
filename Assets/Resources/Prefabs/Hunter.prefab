@@ -7,15 +7,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114098260652347268, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
-        type: 3}
-      propertyPath: threshold
-      value: 0.00001
-      objectReference: {fileID: 0}
     - target: {fileID: 4991043953486063343, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
         type: 3}
       propertyPath: m_Name
       value: Hunter
+      objectReference: {fileID: 0}
+    - target: {fileID: 114824025042191492, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
+        type: 3}
+      propertyPath: resource_capacity
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114824025042191492, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
+        type: 3}
+      propertyPath: speed
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114597803496838840, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
+        type: 3}
+      propertyPath: job
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114597803496838840, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
+        type: 3}
+      propertyPath: food_consumption_rate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114098260652347268, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
+        type: 3}
+      propertyPath: threshold
+      value: 0.00001
       objectReference: {fileID: 0}
     - target: {fileID: 1191943238581226585, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
         type: 3}
@@ -71,26 +91,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114597803496838840, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
-        type: 3}
-      propertyPath: job
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114597803496838840, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
-        type: 3}
-      propertyPath: food_consumption_rate
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114824025042191492, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
-        type: 3}
-      propertyPath: resource_capacity
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 114824025042191492, guid: 608d9e1800ab58c4fbd5a89c8c42c902,
-        type: 3}
-      propertyPath: speed
-      value: 1.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 608d9e1800ab58c4fbd5a89c8c42c902, type: 3}

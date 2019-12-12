@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac83442933c741498d12b383782ab7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food_consumption_rate: 4
+  food_consumption_rate: 3
   job: 1
 --- !u!114 &114824025042191492
 MonoBehaviour:
