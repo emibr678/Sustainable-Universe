@@ -30,14 +30,22 @@ public class Building : MonoBehaviour
 		CivBaseSim civ_base = GameObject.FindWithTag("CivBase").GetComponent<CivBaseSim>();
 		if(civ_base != null)
 		{
-			if(civ_base.wood >= cost_wood && civ_base.stone > cost_stone)
+			if(civ_base.wood >= cost_wood && civ_base.stone >= cost_stone)
 			{
 				civ_base.wood -= cost_wood;
 				civ_base.stone -= cost_stone;
 				return true;
 			}
 		}
-		return false;
-		
+		return false;		
+	}
+
+	public virtual int GetWoodCost()
+	{
+		return cost_wood;
+	}
+	public virtual int GetStoneCost()
+	{
+		return cost_stone;
 	}
 }

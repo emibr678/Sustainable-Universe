@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71e3105f4caeae4fb25bb734d7796b0, type: 3}
   m_Name: Sheep
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: ea3170c532198a64e9bd568293213d40, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -31,7 +31,7 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 1
-  m_InstancedGameObject: {fileID: 4058471488646887297, guid: cbcc2e3b91ad61e4c8462ef4e041bd3e,
+  m_InstancedGameObject: {fileID: 786490356, guid: 19b4ae846c9c1674da934c5ab457f8b4,
     type: 3}
   m_Flags: 1
   m_ColliderType: 1
