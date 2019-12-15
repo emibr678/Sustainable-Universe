@@ -1,10 +1,12 @@
-﻿using System;
+using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class PlaceObjects : MonoBehaviour
 {
 	public Tilemap tileMap;
+    public Tilemap groundTileMap;
+    public Tilemap tileUI;
 	
     [SerializeField]
     public Tile[] placeableTile;
@@ -71,7 +73,8 @@ public class PlaceObjects : MonoBehaviour
 
 		if(Input.GetMouseButtonDown(0))
         {
-			if(!tileMap.HasTile(currentCell))
+            GameObject ground_object = groundTileMap.GetInstantiatedObject(currentCell);
+			if(!tileMap.HasTile(currentCell) && ground_object != null && ground_object.tag == "Grass")
 				Check_SetTile(currentCell,currentPlaceableTile);
 		}
 
@@ -91,7 +94,7 @@ public class PlaceObjects : MonoBehaviour
 			else
 				Debug.Log("Not enough resources for " + thisTile.name);			
 		}
-		else if(thisTile.gameObject.GetComponent<Sheep>() != null)
+		else if(thisTile.gameObject.GetComponent<Placer>() != null)
 		{
 			tileMap.SetTile(cell, thisTile);
 		}
@@ -111,14 +114,13 @@ public class PlaceObjects : MonoBehaviour
 
     public void UIHousePressed()
     { //instansiate with element 0 == House tile
+        tileUI.ClearAllTiles();
         HandleInput(0);
     }
 	
-	//TOFIX:
-	//fåren dör om man lägger ut dem för långt bort från gräset, "svälter och dör"
-	//det blir en extra sprite där man sätter ut fåret
 	public void UISheepPressed() 
     { //instansiate with element 1 == Sheep tile
+        tileUI.ClearAllTiles();
         HandleInput(1);
     }
 }

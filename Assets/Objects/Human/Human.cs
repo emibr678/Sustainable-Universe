@@ -47,9 +47,25 @@ public class Human : MonoBehaviour
         
         if(machine.state == State.Full)
         {
-            bool found = false;
-            Vector3Int civ_base_position = machine.Find("CivBase", ref found);
-            if(found)
+            bool found_civbase = false;
+            bool found_house   = false;
+            Vector3Int civ_base_position = machine.Find("CivBase", ref found_civbase);
+            Vector3Int house_position    = machine.Find("House", ref found_house);
+            if(found_civbase && found_house)
+            {
+                float base_dist = (tilemap.CellToWorld(civ_base_position) - transform.position).magnitude;
+                float house_dist = (tilemap.CellToWorld(house_position) - transform.position).magnitude;
+                
+                if(house_dist < base_dist)
+                {
+                    machine.WalkTo(house_position);
+                }
+                else
+                {
+                    machine.WalkTo(civ_base_position);
+                }
+            }
+            else
             {
                 machine.WalkTo(civ_base_position);
             }
@@ -57,14 +73,17 @@ public class Human : MonoBehaviour
         
         if(machine.state == State.TargetReached)
         {
-            bool found = false;
+            bool found       = false;
+            bool found_house = false;
+            
             Vector3Int civ_base_position = machine.Find("CivBase", ref found);
-            if(found)
+            Vector3Int house_position    = machine.Find("House", ref found_house);
+            if(found || found_house)
             {
                 Vector3Int grid_position = tilemap.WorldToCell(transform.position);
-                if(civ_base_position == grid_position)
+                if(civ_base_position == grid_position || house_position == grid_position)
                 {
-                    GameObject tile_object = tilemap.GetInstantiatedObject(grid_position);
+                    GameObject tile_object = tilemap.GetInstantiatedObject(civ_base_position);
                     if(tile_object != null)
                     {
                         CivBaseSim civ_base = tile_object.GetComponent<CivBaseSim>();
@@ -90,9 +109,25 @@ public class Human : MonoBehaviour
         
         if(machine.state == State.Full)
         {
-            bool found = false;
-            Vector3Int civ_base_position = machine.Find("CivBase", ref found);
-            if(found)
+            bool found_civbase = false;
+            bool found_house   = false;
+            Vector3Int civ_base_position = machine.Find("CivBase", ref found_civbase);
+            Vector3Int house_position    = machine.Find("House", ref found_house);
+            if(found_civbase && found_house)
+            {
+                float base_dist = (tilemap.CellToWorld(civ_base_position) - transform.position).magnitude;
+                float house_dist = (tilemap.CellToWorld(house_position) - transform.position).magnitude;
+                
+                if(house_dist < base_dist)
+                {
+                    machine.WalkTo(house_position);
+                }
+                else
+                {
+                    machine.WalkTo(civ_base_position);
+                }
+            }
+            else
             {
                 machine.WalkTo(civ_base_position);
             }
@@ -100,14 +135,17 @@ public class Human : MonoBehaviour
         
         if(machine.state == State.TargetReached)
         {
-            bool found = false;
+            bool found       = false;
+            bool found_house = false;
+            
             Vector3Int civ_base_position = machine.Find("CivBase", ref found);
-            if(found)
+            Vector3Int house_position    = machine.Find("House", ref found_house);
+            if(found || found_house)
             {
                 Vector3Int grid_position = tilemap.WorldToCell(transform.position);
-                if(civ_base_position == grid_position)
+                if(civ_base_position == grid_position || house_position == grid_position)
                 {
-                    GameObject tile_object = tilemap.GetInstantiatedObject(grid_position);
+                    GameObject tile_object = tilemap.GetInstantiatedObject(civ_base_position);
                     if(tile_object != null)
                     {
                         CivBaseSim civ_base = tile_object.GetComponent<CivBaseSim>();
@@ -118,9 +156,9 @@ public class Human : MonoBehaviour
                         }
                     }
                 }
-                
-                machine.Hunt("Sheep");
             }
+            
+            machine.Hunt("Sheep");
         }
     }
     

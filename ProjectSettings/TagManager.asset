@@ -13,6 +13,7 @@ TagManager:
   - DeepGrass
   - Fish
   - SmallFish
+  - House
   layers:
   - Default
   - TransparentFX

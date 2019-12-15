@@ -59,7 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceptable_ground:
   - Grass
-  spread_probability: 0.2
+  spread_probability: 0.1
 --- !u!114 &114273575085181000
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +8,6 @@ public class Building : MonoBehaviour
 {
     Tilemap tilemap;
     Tilemap ground_tilemap;
-	StateMachine machine;
     
     protected int cost_wood = 0;
     protected int cost_stone = 0;
@@ -17,7 +16,7 @@ public class Building : MonoBehaviour
     {
         tilemap = GameObject.Find("World").GetComponent<Tilemap>();
         ground_tilemap = GameObject.Find("Ground").GetComponent<Tilemap>();
-		machine = gameObject.GetComponent<StateMachine>();
+        Instantiate(Resources.Load("Prefabs/IdleHuman"), transform.position + new Vector3(0, -0.25f, 0), Quaternion.identity);
     }
     
     protected virtual void Update()
@@ -39,7 +38,7 @@ public class Building : MonoBehaviour
 		}
 		return false;		
 	}
-
+    
 	public virtual int GetWoodCost()
 	{
 		return cost_wood;

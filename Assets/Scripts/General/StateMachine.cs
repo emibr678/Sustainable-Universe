@@ -70,6 +70,24 @@ public class StateMachine : MonoBehaviour
         hunt_tag = tag;
     }
     
+    bool AloneGO(GameObject go)
+    {
+        GameObject[] objects = GameObject.FindGameObjectsWithTag(gameObject.tag);
+        for(int i = 0; i < objects.Length; i++)
+        {
+            if(objects[i] != gameObject)
+            {
+                StateMachine other = objects[i].GetComponent<StateMachine>();
+                if(other.state == State.Hunt && other.hunt_target == go)
+                {
+                    return false;
+                }
+            }
+        }
+        
+        return true;
+    }
+    
     public GameObject FindGO(string tag)
     {
         GameObject result = null;
@@ -83,7 +101,7 @@ public class StateMachine : MonoBehaviour
             for(int i = 1; i < objects.Length; i++)
             {
                 float distance = (objects[i].transform.position - transform.position).magnitude;
-                if(distance < nearest_distance)
+                if(distance < nearest_distance && AloneGO(objects[i]))
                 {
                     nearest = objects[i];
                     nearest_distance = distance;

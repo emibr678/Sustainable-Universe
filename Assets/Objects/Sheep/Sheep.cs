@@ -47,6 +47,7 @@ public class Sheep : MonoBehaviour
         {
             Instantiate(Resources.Load("Prefabs/Sheep"), transform.position, Quaternion.identity);
             machine.resource_count = 75;
+            machine.resource_capacity *= 3;
             machine.Collect("DeepGrass");
         }
         

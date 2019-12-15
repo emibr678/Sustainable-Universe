@@ -33,37 +33,40 @@ public class Mark : MonoBehaviour
         {
             GameObject marked_object = world.GetInstantiatedObject(grid_position);
             
-            switch(marked_object.tag)
+            if(marked_object != null)
             {
-                case "Tree":
+                switch(marked_object.tag)
                 {
-                    object_information.GetComponent<Text>().text = "Object: Tree";
-                } break;
+                    case "Tree":
+                    {
+                        object_information.GetComponent<Text>().text = "Object: Tree";
+                    } break;
                 
-                case "CivBase":
-                {
-                    object_information.GetComponent<Text>().text = "Object: Civilization center\n";
-                    CivBaseSim cbase = marked_object.GetComponent<CivBaseSim>();
-                    int wood_count = cbase.wood;
-                    int food_count = cbase.food;
-                    object_information.GetComponent<Text>().text += "Wood: " + wood_count + "\n";
-                    object_information.GetComponent<Text>().text += "Food: " + food_count + "\n";
-                } break;
-                
-                case "Rock":
-                {
-                    object_information.GetComponent<Text>().text = "Object: Rock";
-                } break;
-                
-                case "DeepGrass":
-                {
-                    object_information.GetComponent<Text>().text = "Object: Thick grass";
-                } break;
-                
-                default:
-                {
-                    object_information.GetComponent<Text>().text = marked_object.tag;
-                } break;
+                    case "CivBase":
+                    {
+                        object_information.GetComponent<Text>().text = "Object: Civilization center\n";
+                        CivBaseSim cbase = marked_object.GetComponent<CivBaseSim>();
+                        int wood_count = cbase.wood;
+                        int food_count = cbase.food;
+                        object_information.GetComponent<Text>().text += "Wood: " + wood_count + "\n";
+                        object_information.GetComponent<Text>().text += "Food: " + food_count + "\n";
+                    } break;
+                    
+                    case "Rock":
+                    {
+                        object_information.GetComponent<Text>().text = "Object: Rock";
+                    } break;
+                    
+                    case "DeepGrass":
+                    {
+                        object_information.GetComponent<Text>().text = "Object: Thick grass";
+                    } break;
+                    
+                    default:
+                    {
+                        object_information.GetComponent<Text>().text = marked_object.tag;
+                    } break;
+                }
             }
         }
         else
@@ -76,17 +79,20 @@ public class Mark : MonoBehaviour
         {
             GameObject marked_ground = ground.GetInstantiatedObject(grid_position);
             
-            switch(marked_ground.tag)
+            if(marked_ground != null)
             {
-                case "Grass":
+                switch(marked_ground.tag)
                 {
-                    ground_information.GetComponent<Text>().text = "Ground: Grass";
-                } break;
-                
-                default:
-                {
-                    ground_information.GetComponent<Text>().text = "Uknown ground type";
-                } break;
+                    case "Grass":
+                    {
+                        ground_information.GetComponent<Text>().text = "Ground: Grass";
+                    } break;
+                    
+                    default:
+                    {
+                        ground_information.GetComponent<Text>().text = "Uknown ground type";
+                    } break;
+                }
             }
         }
         else

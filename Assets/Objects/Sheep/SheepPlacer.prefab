@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &404083567447117001
+--- !u!1 &7255231154593627726
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3688000589081092079}
-  - component: {fileID: 114764177003206394}
+  - component: {fileID: 1659773545019004685}
+  - component: {fileID: 2128691151587152636}
   m_Layer: 0
-  m_Name: House
-  m_TagString: House
+  m_Name: SheepPlacer
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3688000589081092079
+--- !u!4 &1659773545019004685
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 404083567447117001}
+  m_GameObject: {fileID: 7255231154593627726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,15 +31,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114764177003206394
+--- !u!114 &2128691151587152636
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 404083567447117001}
+  m_GameObject: {fileID: 7255231154593627726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1b9c257177bbad4db9490a0dc883dbb, type: 3}
+  m_Script: {fileID: 11500000, guid: e279abd71be4ae4469047a5ab68aa7f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obj: Sheep

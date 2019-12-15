@@ -8,6 +8,8 @@ public class HumanControl : MonoBehaviour
     public Text idle_count_text;
     public Text lumberjack_count_text;
     public Text hunter_count_text;
+    public Text wood_count;
+    public Text food_count;
     
     public void RemoveLumberjack()
     {
@@ -97,5 +99,10 @@ public class HumanControl : MonoBehaviour
         idle_count_text.text       = idle_count.ToString();
         lumberjack_count_text.text = lumberjack_count.ToString();
         hunter_count_text.text     = hunter_count.ToString();
+        
+        CivBaseSim civ_base;
+        civ_base = GameObject.FindGameObjectsWithTag("CivBase")[0].GetComponent<CivBaseSim>();
+        wood_count.text            = civ_base.wood.ToString();
+        food_count.text            = civ_base.food.ToString();
     }
 }
