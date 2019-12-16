@@ -112,7 +112,7 @@ MonoBehaviour:
   state: 0
   speed: 0.6
   collect_speed: 1
-  resource_capacity: 300
+  resource_capacity: 350
   resource_count: 90
 --- !u!114 &114722749904241922
 MonoBehaviour:

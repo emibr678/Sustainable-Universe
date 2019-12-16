@@ -59,4 +59,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceptable_ground:
   - Grass
-  spread_probability: 0.65
+  spread_probability: 0.35
